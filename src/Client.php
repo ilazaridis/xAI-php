@@ -13,7 +13,7 @@ class Client
     private GuzzleClient $client;
     public function __construct()
     {
-        $this->client = new GuzzleClient(['base_uri' => getenv('XAI_BASE_URL')]);
+        $this->client = new GuzzleClient(['base_uri' => getenv('XAI_BASE_URI')]);
     }
 
     public function chatCompletions(ChatCompletions $request): ResponseInterface
@@ -24,7 +24,7 @@ class Client
                 uri: 'v1/chat/completions',
                 options: [
                     RequestOptions::HEADERS => ['authorization' => 'Bearer ' . getenv('XAI_ACCESS_TOKEN')],
-                    RequestOptions::JSON => json_encode($request->toArray(), JSON_THROW_ON_ERROR),
+                    RequestOptions::JSON => $request->toArray(),
                 ]
             );
     }
