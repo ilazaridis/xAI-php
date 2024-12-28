@@ -1,0 +1,19 @@
+{
+    "name": "ounos/x-ai-php",
+    "description": "PHP SDK for xAI API.",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ounos\\XAiPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ioannis Lazaridis",
+            "email": "ilazaridis@protonmail.com"
+        }
+    ]
+}
